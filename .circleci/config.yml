@@ -1,5 +1,6 @@
 version: 2.1
-
+orbs:
+  cloudformation: davidkelley/cloudformation@1.2.3
 jobs:
   create_infrastructure:
     docker:
