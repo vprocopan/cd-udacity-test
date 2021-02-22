@@ -10,6 +10,8 @@ jobs:
           name: Ensure backend infrastructure exist
           command: |
             aws cloudformation deploy --template-file template.yml --stack-name my-stack
+          
+      - run:
           name: envs
           command: |
             aws configure --profile staging set region eu-central-1 \
