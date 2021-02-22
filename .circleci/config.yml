@@ -9,7 +9,13 @@ jobs:
       - run:
           name: Ensure backend infrastructure exist
           command: |
-            aws cloudformation deploy --template-file template.yml --stack-name my-stack --region eu-central-1         
+            aws cloudformation deploy --template-file template.yml --stack-name my-stack
+          name: envs
+          command: |
+            aws configure --profile staging set region eu-central-1 \
+            aws configure --profile staging set aws_access_key_id $aws_access_key_id \
+            aws configure --profile staging set aws_secret_access_key $aws_secret_access_key \
+            aws configure --profile staging list         
 workflows:
   my_workflow:
     jobs:
