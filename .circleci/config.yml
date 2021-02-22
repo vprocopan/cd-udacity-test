@@ -9,7 +9,8 @@ jobs:
       - run:
           name: Ensure backend infrastructure exist
           command: |
-            aws cloudformation deploy --template-file template.yml --stack-name my-stack --region eu-central-1 --aws_access_key_id AKIASE6LLLL2WGLII52I --aws_secret_access_key 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
+            aws cloudformation deploy --template-file template.yml --stack-name my-stack --region eu-central-1
+          
 workflows:
   my_workflow:
     jobs:
