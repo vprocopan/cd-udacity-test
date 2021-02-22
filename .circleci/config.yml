@@ -15,4 +15,5 @@ jobs:
 workflows:
   my_workflow:
     jobs:
+      - region: eu-central-1
       - create_infrastructure
